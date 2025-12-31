@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///C:/Users/DELL/Downloads/First%20Step%20_%20Eletr%C3%B4nicos.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>First Step | Eletrônicos</title>
+  <style>
+    :root {
+      --bg: #182460;
+      --card: #0b0d13;
+      --text: #eef1f7;
+      --muted: #a9b0c6;
+      --primary: #2566ff;
+      --accent: #e63c11;
+      --success: #01cb55;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: linear-gradient(180deg, rgba(23,26,42,0.95), rgba(23,26,42,0.85));
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav {
+      max-width: 1100px; margin: 0 auto; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav { position: relative; }
+    .brand {
+      display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.4px;
+    }
+    .logo {
+      width: 36px; height: 36px; border-radius: 10px; overflow: hidden;
+      background: radial-gradient(100% 100% at 50% 0%, #7aa2ff 0%, #5b8cff 50%, #355dd8 100%);
+      box-shadow: var(--shadow);
+    }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { color: var(--muted); font-weight: 600; }
+    .nav-links a:hover { color: var(--text); }
+    .search {
+      display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.02);
+      padding: 6px 8px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.03);
+    }
+    .search img { width: 24px; height: 24px; border-radius: 6px; object-fit: cover; display: block; }
+    .search input {
+      background: transparent; border: none; outline: none; color: var(--text);
+      width: 160px; font-weight: 600;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px; margin: 40px auto; padding: 0 20px;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px;
+    }
+    .hero-card {
+      background: linear-gradient(180deg, #000000, #0f3bff);
+      border: 1px solid rgba(49, 200, 255, 0.06);
+      border-radius: 18px; padding: 28px; box-shadow: var(--shadow);
+    }
+    .hero h1 { margin: 0 0 10px; font-size: 2.2rem; }
+    .hero p { margin: 0 0 18px; color: var(--muted); }
+    .cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--primary); color: white; padding: 12px 16px; border-radius: 12px; font-weight: 700; box-shadow: var(--shadow);
+    }
+    .badge { display: inline-block; margin-left: 10px; padding: 6px 10px; background: #243058; color: #cfe0ff; border-radius: 999px; font-size: 0.85rem; font-weight: 700; }
+
+    .promo {
+      background: linear-gradient(180deg, #1a222f, #151c28);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px; padding: 24px; box-shadow: var(--shadow);
+    }
+    .promo h3 { margin: 0 0 6px; }
+    .promo p { margin: 0; color: var(--muted); }
+    .price-tag { margin-top: 12px; display: inline-block; background: #122a1a; color: #c7f7d6; border: 1px solid #2ecc71; padding: 8px 12px; border-radius: 10px; font-weight: 700; }
+
+    /* Products */
+    .section {
+      max-width: 1100px; margin: 24px auto 50px; padding: 0 20px;
+    }
+    .section h2 { margin: 0 0 14px; font-size: 1.6rem; }
+    .section p { margin: 0 0 16px; color: var(--muted); }
+
+    .grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
+    }
+    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px; overflow: hidden; box-shadow: var(--shadow);
+      display: flex; flex-direction: column;
+    }
+    .media {
+      background: linear-gradient(135deg, #27304a, #1c2238);
+      height: 160px; display: grid; place-items: center; color: #cfe0ff; font-weight: 800; letter-spacing: 0.6px;
+    }
+    .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .content { padding: 16px; display: grid; gap: 8px; }
+    .title { font-weight: 700; }
+    .desc { color: var(--muted); font-size: 0.95rem; }
+    .price { font-weight: 800; color: #c7f7d6; }
+    .price small { color: #9fd9b3; font-weight: 700; }
+    .actions { display: flex; gap: 10px; margin-top: 8px; }
+    .btn {
+      flex: 1; text-align: center; padding: 10px 12px; border-radius: 10px; font-weight: 700;
+      background: #243058; color: #cfe0ff; border: 1px solid rgba(255,255,255,0.08);
+    }
+    .btn.primary { background: var(--primary); color: white; }
+    .btn:hover { filter: brightness(1.08); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 24px 20px; color: var(--muted); text-align: center;
+    }
+    .foot-inner { max-width: 1100px; margin: 0 auto; }
+  </style>
+  <style>
+    /* Floating share button (middle-right of page) */
+    .share-fab { position: fixed; right: 18px; top: 50%; transform: translateY(-50%); z-index: 9999; display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+    .share-fab .fab { background:#243058; color:#cfe0ff; border:1px solid rgba(255,255,255,0.08); padding:10px 12px; border-radius:12px; font-weight:700; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.35); }
+    .share-fab .fab.main { background: var(--accent); color: white; font-size:16px; width:48px; height:48px; border-radius:50%; display:grid; place-items:center; }
+    .share-fab .fab-panel { display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+    .share-fab .fab-panel button { background: rgba(255,255,255,0.03); color:var(--text); padding:8px 10px; border-radius:10px; border:1px solid rgba(255,255,255,0.05); }
+    .share-fab img#qrImg { width:150px; height:150px; object-fit:contain; display:block; }
+    @media (max-width:900px){ .share-fab { right:12px; top:50%; transform:translateY(-50%); } }
+    /* Contact panel in navbar */
+    .contact-panel {
+      position: absolute;
+      right: 20px;
+      top: 64px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 10px 12px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      display: none;
+      z-index: 9999;
+      min-width: 180px;
+      text-align: right;
+    }
+    .contact-panel a { display:block; color:var(--muted); font-weight:700; padding:6px 0; }
+    /* Responsividade adicional */
+    @media (max-width:900px) {
+      .nav { padding: 10px 12px; }
+      .search input { width: 120px; }
+      .contact-panel { right: 12px; top: 58px; }
+      .share-fab { right: 12px; }
+    }
+    @media (max-width:600px) {
+      .nav { padding: 8px 10px; }
+      .search input { width: 100px; }
+      .nav-links { gap: 8px; align-items:center; }
+      .nav-links a { font-size: 0.95rem; }
+      /* Contact panel becomes full-width dropdown on small screens */
+      .contact-panel { position: fixed; right: 12px; left: 12px; top: 56px; border-radius: 12px; min-width: auto; text-align: left; }
+      .contact-panel a { padding: 10px 6px; font-size: 1rem; }
+      /* Share button moves to bottom-right on small devices */
+      .share-fab { position: fixed; right: 12px; bottom: 12px; top: auto; transform: none; flex-direction: column-reverse; align-items: flex-end; }
+      /* Order bar compact and collapsible */
+      #order-bar { padding:8px 10px; }
+      #order-bar #order-list { max-height:56px; }
+      #order-bar .btn { padding:8px 10px; font-size: 0.9rem; }
+      #order-toggle { display:inline-flex; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">
+          <img src="c:\Users\DELL\Downloads\image (1).png" alt="Logo First Step">
+        </div>
+        <span>First Step</span>
+      </div>
+      <div class="search" role="search" aria-label="Pesquisar produtos">
+        <img src="c:\Users\DELL\Downloads\logo.jpg" alt="logo">
+        <input id="searchInput" type="search" placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos">
+      </div>
+      <nav class="nav-links">
+        <a href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#produtos">Produtos</a>
+        <a href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#ofertas">Ofertas</a>
+        <a href="#" id="contactBtn" class="contact-link" style="color:var(--muted); font-weight:700;">Contato</a>
+        <div id="contactPanel" class="contact-panel" aria-hidden="true">
+          <a href="tel:+5545999409038">45 999409038</a>
+          <a href="tel:+5542998235182">42 998235182</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Eletrônicos para facilitar seu dia a dia</h1>
+        <p>Qualidade que acompanha seu ritmo. Fones confortáveis, carregadores confiáveis e preço honesto.</p>
+        <a class="carta" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#produtos">Explorar produtos</a>
+        <div class="card"><img src="c:\Users\DELL\Downloads\logo.jpg" alt="Carregador FastCharge"></div>
+        <span class="badge">Frete local — Cascavel/PR</span>
+      </div>
+
+
+
+
+
+
+      <div class="promo" id="ofertas">
+        <h3>Oferta da semana.</h3>
+                  <div class="card"><img src="c:\Users\DELL\Downloads\iPhone-17-unboxing-without-charger-768x432.png" alt="Carregador FastCharge"></div>
+         <span style="color: #27f869;">Carregador rápido com proteção — ideal para uso diário.</span>
+          <span class="price-tag">R$ 25,00</span>
+          <div class="actions" style="margin-top:12px;">
+            <button class="btn primary" data-title="Carregador rápido com proteção" data-price="R$ 25,00" data-img="c:\Users\DELL\Downloads\iPhone-17-unboxing-without-charger-768x432.png">Comprar</button>
+            <button class="btn">Perguntar</button>
+          </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="section" id="produtos">
+      <h1>Produtos em destaque!</h1>
+      <p>Escolha o que combina com você. Veja detalhes e valores abaixo.</p>
+
+      <div class="grid">
+        <!-- Carregador -->
+        <article class="card">
+          <div class="card"> <img src="c:\Users\DELL\Downloads\carrrr.jpg" alt="Carregador FastCharge"></div>
+          <div class="content">
+            <div class="title">Carregador FastCharge turbo</div>
+            <div class="desc">Compatível com Android/iOS. Proteção contra superaquecimento e sobrecarga.</div>
+            <div class="price">R$ 10,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fone 50 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\fono.webp" alt="Fone Comfort Bass"></div>
+          <div class="content">
+            <div class="title">Fone de ouvido Comfort Bass</div>
+            <div class="desc">Design leve, cabo reforçado e microfone para chamadas.</div>
+            <div class="price">R$ 50,00 <small>(preço inicial)</small></div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fone 60 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\jbl.webp" alt="Fone Bluetooth Sport"></div>
+          <div class="content">
+            <div class="title">Fone Bluetooth Sport</div>
+            <div class="desc">Sem fio, bateria até 8h, resistente a suor. Ideal para treinos.</div>
+            <div class="price">R$ 60,00 <small>(modelo premium)</small></div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Camiseta -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\camisetas.jpg" alt="Camiseta"></div>
+          <div class="content">
+            <div class="title">Camiseta</div>
+            <div class="desc">Variedade de tamanhos e cores.</div>
+            <div class="price">R$ 90,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Garrafa -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\g.webp" alt="Garrafa"></div>
+          <div class="content">
+            <div class="title">Garrafa</div>
+            <div class="desc">Garrafa térmica 1200ml.</div>
+            <div class="price">R$ 90,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Barbeador -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\b.webp" alt="Barbeador elétrico"></div>
+          <div class="content">
+            <div class="title">Barbeador Elétrico</div>
+            <div class="desc">Compacto e potente.</div>
+            <div class="price">R$ 85,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Barbeador 1 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\bb.webp" alt="Em breve"></div>
+          <div class="content">
+            <div class="title">Barbeador Elétrico</div>
+            <div class="desc">3 em 1 potente</div>
+            <div class="price">80,00</div>
+            <div class="actions">
+             <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- garrafa 2 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ggg.webp" alt="Em breve"></div>
+          <div class="content">
+            <div class="title">Garrafa com marcador de temperatura</div>
+            <div class="desc">500ml</div>
+            <div class="price">40,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+   </div>
+          </div>
+        </article>
+              <!-- fone 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\f fio.webp" alt="Fone de ouvido"></div>
+          <div class="content">
+            <div class="title">fone com fio, modelo P2</div>
+            <div class="desc"></div>
+            <div class="price">15,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carregador -->
+        <article class="card">
+          <div class="card"> <img src="c:\Users\DELL\Downloads\carregado.webp" alt="Carregador FastCharge"></div>
+          <div class="content">
+            <div class="title">Carregador FastCharge 20W</div>
+            <div class="desc">Compatível com Android/iOS. Proteção contra superaquecimento e sobrecarga.</div>
+            <div class="price">R$ 25,00</div>
+            <div class="actions">
+                <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fone 50 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ff.webp" alt="Fone Comfort Bass"></div>
+          <div class="content">
+            <div class="title">Fone de ouvido Comfort Bass</div>
+            <div class="desc">Design leve, microfone para chamadas.</div>
+            <div class="price">R$ 60,00 <small>(preço inicial)</small></div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fone 60 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ff esp.webp" alt="Fone Bluetooth Sport"></div>
+          <div class="content">
+            <div class="title">Fone Bluetooth Sport</div>
+            <div class="desc">Sem fio, bateria até 8h, resistente a suor. Ideal para treinos.</div>
+            <div class="price">R$ 60,00 <small>(modelo premium)</small></div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Camiseta -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\cami.webp" alt="Camiseta"></div>
+          <div class="content">
+            <div class="title">Camiseta</div>
+            <div class="desc">Variedade de tamanhos e cores.</div>
+            <div class="price">R$ 90,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Garrafa -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\gg.webp" alt="Garrafa"></div>
+          <div class="content">
+            <div class="title">Garrafa</div>
+            <div class="desc">Garrafa térmica 2,5L.</div>
+            <div class="price">R$ 250,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Barbeador -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\bbb.webp" alt="Barbeador elétrico"></div>
+          <div class="content">
+            <div class="title">Barbeador Elétrico</div>
+            <div class="desc">Compacto e media potente.</div>
+            <div class="price">R$ 55,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder 1 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\cel.webp" alt="Xiaomi Redmi 15C"></div>
+          <div class="content">
+            <div class="title">Xiaomi Redmi 15C</div>
+            <div class="desc"></div>
+            <div class="price">R$ 1.200,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder 2 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\cel c71.webp" alt="c71"></div>
+          <div class="content">
+            <div class="title">Smartphone POCO C71</div>
+            <div class="desc"></div>
+            <div class="price">R$ 1.100,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+   </div>
+          </div>
+        </article>
+              <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\celll.webp" alt="c65"></div>
+          <div class="content">
+            <div class="title">Smartphone C65</div>
+            <div class="desc"></div>
+            <div class="price">R$ 1.600,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+
+
+
+    <section class="section" id="produtos">
+      <h1>ferramentas</h1>
+      <p>Escolha o que combina com seu trabalho.</p>
+
+
+
+
+
+
+<div class="grid">
+       <!-- Placeholder 1 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ferr.webp" alt="furadeira"></div>
+          <div class="content">
+            <div class="title">Furadeira Impacto 1000W</div>
+            <div class="desc">110v e 220v</div>
+            <div class="price">550,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder 2 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\fer 1.webp" alt="Esmerilhadeira"></div>
+          <div class="content">
+            <div class="title">Esmerilhadeira c/fio</div>
+            <div class="desc">110v e 220v</div>
+            <div class="price">300,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+   </div>
+          </div>
+        </article>
+              <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ferrr.webp" alt="ferramental"></div>
+          <div class="content">
+            <div class="title">Ferramental Alicate </div>
+            <div class="desc"></div>
+            <div class="price">25,00</div>
+            <div class="actions">
+                <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+            </div>
+            </article>
+
+             <!-- Placeholder 1 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ferr 2.webp" alt="serra"></div>
+          <div class="content">
+            <div class="title">Serra Madeira BOMVICK</div>
+            <div class="desc">110V e 220V</div>
+            <div class="price">450,00</div>
+            <div class="actions">
+                <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder 2 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ferr bb.webp" alt="BOMBA DE AR COMPRESSOR "></div>
+          <div class="content">
+            <div class="title">BOMBA DE AR COMPRESSOR</div>
+            <div class="desc">COMPRESSOR DIGITAL</div>
+            <div class="price">120,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+   </div>
+          </div>
+        </article>
+              <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ferrr 1.webp" alt="Esmerilhadeira"></div>
+          <div class="content">
+            <div class="title">Esmerilhadeira de bateria</div>
+            <div class="desc"> 21V-10mm</div>
+            <div class="price">350,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+</div>
+</article>
+             <!-- Placeholder 1 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ferr tt.webp" alt=" BOMVICK "></div>
+          <div class="content">
+            <div class="title">Parafusadeira E Chave De Impacto 2 </div>
+            <div class="desc">Baterias 21v Brushless - Bomvink</div>
+            <div class="price">650,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder 2 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ferrrr.webp" alt="soldador"></div>
+          <div class="content">
+            <div class="title">Ferro de Soldar</div>
+            <div class="desc">127V 40W</div>
+            <div class="price">28,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+              <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ferr 2.webp" alt="Serra Madeira BOMVICK"></div>
+          <div class="content">
+            <div class="title">Serra Madeira BOMVICK</div>
+            <div class="desc">Bateria 21V-10 celulas</div>
+            <div class="price">550,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+            </div>
+            </div>
+            </article>
+            </section>
+
+
+
+
+            <section class="section" id="produtos">
+      <h1>Eletronicos</h1>
+      <p>otimos preços.</p>
+
+
+
+
+
+
+<div class="grid">
+       <!-- Placeholder 1 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeeeeeeeeeeeee.jpg" alt="mini liquidificador"></div>
+          <div class="content">
+            <div class="title">mini liquidificador </div>
+            <div class="desc">Portátil</div>
+            <div class="price">40,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder 2 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeeeeeeeeeeee.jpg" alt="mini Barbeador"></div>
+          <div class="content">
+            <div class="title">mini Barbeador</div>
+            <div class="desc">Portátil</div>
+            <div class="price">35,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+   </div>
+          </div>
+        </article>
+              <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeeeeeeeeeee.webp" alt="maquina de tosar pelo"></div>
+          <div class="content">
+            <div class="title">máquina de Tosar Pet</div>
+            <div class="desc">Portátil</div>
+            <div class="price">55,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+            </div>
+            </article>
+
+             <!-- Placeholder 1 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeeeeeeeeee.jpg" alt="maquina de cortar cabelo"></div>
+          <div class="content">
+            <div class="title">máquina de cortar cabelo  </div>
+            <div class="desc">profissional</div>
+            <div class="price">50,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder 2 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeeeeeeeee.jpg" alt="inaçlador portátil"></div>
+          <div class="content">
+            <div class="title">inaçlador </div>
+            <div class="desc">Portátil</div>
+            <div class="price">50,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+   </div>
+          </div>
+        </article>
+              <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeeeeeeee.jpg" alt="Campanhia residencial"></div>
+          <div class="content">
+            <div class="title">Campanhia residencial</div>
+            <div class="desc">sem fio</div>
+            <div class="price">30,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+</div>
+</article>
+             <!-- Placeholder 1 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeeeeeee.jpg" alt="Aspirador de pó"></div>
+          <div class="content">
+            <div class="title">Aspirador de pó</div>
+            <div class="desc">veicular</div>
+            <div class="price">50,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder 2 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeeeeee.jpg" alt="Em breve"></div>
+          <div class="content">
+            <div class="title">Medidor de pressção </div>
+            <div class="desc">Tipo Pulso </div>
+            <div class="price">80,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+   </div>
+          </div>
+        </article>
+              <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeeeee.jpg" alt="Em breve"></div>
+          <div class="content">
+            <div class="title">Fechadura DIGITAL</div>
+            <div class="desc">Biométria</div>
+            <div class="price">310,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+            </div>
+            </article>
+
+ <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeeee.jpg" alt="Air fryer fritadeira"></div>
+          <div class="content">
+            <div class="title">Air Fryer Fritadeira</div>
+            <div class="desc">220v  4,7L</div>
+            <div class="price">350,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+            </div>
+            </article>
+
+             <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeeee.jpg" alt="Luminaria público"></div>
+          <div class="content">
+            <div class="title">Luminaria pública 200W solar</div>
+            <div class="desc">Controle remoto</div>
+            <div class="price">60,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+            </div>
+            </article>
+
+             <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eeee.jpg" alt="Barbeador"></div>
+          <div class="content">
+            <div class="title">Barbeador</div>
+            <div class="desc">profissional IPX7</div>
+            <div class="price">95,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+            </div>
+            </article>
+
+             <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\eee.jpg" alt="Repetidor de sinal WI-FI"></div>
+          <div class="content">
+            <div class="title">Repetidor de sinal WI-FI</div>
+            <div class="desc">6 Antenas 300mbps</div>
+            <div class="price">100,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+            </div>
+            </article>
+
+             <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\e.jpg" alt="Ventilador"></div>
+          <div class="content">
+            <div class="title">Ventilador 220V</div>
+            <div class="desc">6 Pás Extra grande</div>
+            <div class="price">240,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+            </div>
+            </article>
+
+
+            <!-- Placeholder 3 -->
+        <article class="card">
+          <div class="card"><img src="c:\Users\DELL\Downloads\ee.jpg" alt="Amazon Fire TV STICK HD"></div>
+          <div class="content">
+            <div class="title">Amazon Fire TV STICK HD</div>
+            <div class="desc">8GB WI-FI 5</div>
+            <div class="price">300,00</div>
+            <div class="actions">
+              <a class="btn primary" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Comprar</a>
+              <a class="btn" href="file:///C:/Users/DELL/OneDrive/Desktop/site%20produtos%20first%20step.html?#contato">Perguntar</a>
+            </div>
+</div>
+</div>
+</article>
+            </section>
+
+
+    <section class="section" id="contato">
+      <h2>Fale com a First Step</h2>
+      <p>Quer fechar pedido ou tirar dúvidas? Envie uma mensagem e retornamos ainda hoje.</p>
+
+      
+      <div class="card" style="padding: 0;">
+        <form style="padding:16px; display:grid; gap:12px;">
+          <label>
+            <span style="display:block; margin-bottom:6px; color:#a9b0c6; font-weight:600;">Nome</span>
+            <input type="text" placeholder="Seu nome" required="" style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:#121527; color:#eef1f7;">
+          </label>
+          <label>
+            <span style="display:block; margin-bottom:6px; color:#a9b0c6; font-weight:600;">WhatsApp ou e-mail</span>
+            <input type="text" placeholder="(xx) xxxxx-xxxx ou seu e-mail" required="" style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:#121527; color:#eef1f7;">
+          </label>
+          <label>
+            <span style="display:block; margin-bottom:6px; color:#a9b0c6; font-weight:600;">Mensagem</span>
+            <textarea placeholder="Ex.: Quero 1 carregador e 1 fone de R$ 60" style="width:100%; min-height:110px; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:#121527; color:#eef1f7;"></textarea>
+          </label>
+          <div style="display:flex; gap:10px;">
+            <button type="submit" class="btn primary" style="border:none; cursor:pointer;">Enviar</button>
+            <button type="reset" class="btn" style="border:none; cursor:pointer;">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      © 2025 First Step • Eletrônicos de confiança • Cascavel, Paraná
+    </div>
+  </footer>
+  <footer>
+    <div class="foot-inner">
+      © 2025 First Step • Eletrônicos de confiança • Cascavel, Paraná
+    </div>
+  </footer>
+
+  <!-- Barra fixa de pedidos (aparece na parte inferior) -->
+  <div id="order-bar" style="position:fixed; left:0; right:0; bottom:0; background:linear-gradient(180deg,#0b0d13, #0b0d13); border-top:1px solid rgba(255,255,255,0.04); padding:10px 18px; display:flex; align-items:center; gap:12px; z-index:9998;">
+    <button id="order-toggle" class="btn" style="display:none;">☰</button>
+    <div style="font-weight:700; color:var(--muted);">Lista de pedir:</div>
+    <div id="order-list" style="display:flex; gap:10px; overflow:auto; padding:6px 0;"> </div>
+    <div style="margin-left:auto; display:flex; gap:8px;">
+      <button id="send-order" class="btn primary" style="background:var(--success);">Enviar pedido</button>
+      <button id="clear-orders" class="btn">Limpar</button>
+    </div>
+  </div>
+
+  <!-- Floating share controls inserted by Copilot -->
+  <div class="share-fab" aria-hidden="false">
+    <button class="fab main" onclick="sharePage()" title="Compartilhar">🔗</button>
+    <div class="fab-panel">
+      <button onclick="openNew()">Abrir</button>
+      <button onclick="copyLink()">Copiar link</button>
+      <button onclick="whatsappShare()">WhatsApp</button>
+      <button onclick="mailShare()">E-mail</button>
+      <button onclick="toggleQR()">QR</button>
+      <img id="qrImg" src="" alt="QR code" style="display:none; border-radius:10px; border:1px solid rgba(255,255,255,0.06); margin-top:6px;">
+    </div>
+  </div>
+
+  <script>
+    const pageUrl = location.href;
+    function openNew(){ window.open(pageUrl, '_blank'); }
+    function copyLink(){ if(navigator.clipboard){ navigator.clipboard.writeText(pageUrl).then(()=> alert('Link copiado')); } else { prompt('Copie o link:', pageUrl); } }
+    function sharePage(){ if(navigator.share){ navigator.share({ title: document.title, url: pageUrl }).catch(()=>{}); } else { copyLink(); } }
+    function whatsappShare(){ const url = 'https://wa.me/?text=' + encodeURIComponent(pageUrl); window.open(url, '_blank'); }
+    function mailShare(){ window.location.href = 'mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent(pageUrl); }
+    function toggleQR(){ const img = document.getElementById('qrImg'); if(img.style.display === 'block'){ img.style.display = 'none'; } else { img.style.display = 'block'; img.src = 'https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=' + encodeURIComponent(pageUrl); } }
+
+    // Funções de lista de pedidos
+    document.addEventListener('DOMContentLoaded', () => {
+      const orderList = document.getElementById('order-list');
+      const clearBtn = document.getElementById('clear-orders');
+
+      function createOrderItem(title, price, imgSrc) {
+        const item = document.createElement('div');
+        item.style.display = 'flex';
+        item.style.alignItems = 'center';
+        item.style.gap = '8px';
+        item.style.padding = '6px 10px';
+        item.style.background = 'rgba(255,255,255,0.02)';
+        item.style.border = '1px solid rgba(255,255,255,0.04)';
+        item.style.borderRadius = '10px';
+        item.style.minWidth = '140px';
+        const img = document.createElement('img');
+        img.src = imgSrc || '';
+        img.alt = title;
+        img.style.width = '44px';
+        img.style.height = '44px';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '8px';
+        const info = document.createElement('div');
+        info.style.display = 'flex';
+        info.style.flexDirection = 'column';
+        info.style.fontSize = '13px';
+        info.innerHTML = `<strong style='font-weight:700'>${title}</strong><span style='color:var(--muted)'>${price}</span>`;
+        const remove = document.createElement('button');
+        remove.textContent = '✕';
+        remove.className = 'btn';
+        remove.style.padding = '6px 8px';
+        remove.style.marginLeft = '6px';
+        remove.onclick = () => item.remove();
+        item.appendChild(img);
+        item.appendChild(info);
+        item.appendChild(remove);
+        return item;
+      }
+
+      document.querySelectorAll('.btn.primary').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          let title = 'Produto', price = '', img = '';
+          const article = btn.closest('article.card');
+          if (article) {
+            title = article.querySelector('.title')?.textContent.trim() || title;
+            price = article.querySelector('.price')?.textContent.trim() || price;
+            img = article.querySelector('img')?.src || img;
+          } else if (btn.dataset && (btn.dataset.title || btn.dataset.price)) {
+            title = btn.dataset.title || title;
+            price = btn.dataset.price || price;
+            img = btn.dataset.img || img;
+          } else {
+            // tentar encontrar informações em containers próximos (.content, .promo, .hero-card, .card)
+            const container = btn.closest('.content, .promo, .hero-card, .card');
+            if (container) {
+              title = (container.querySelector('.title')?.textContent || container.querySelector('h3')?.textContent || container.querySelector('h1')?.textContent || title).trim();
+              price = (container.querySelector('.price')?.textContent || container.querySelector('.price-tag')?.textContent || price).trim();
+              img = container.querySelector('img')?.src || img;
+            } else {
+              return;
+            }
+          }
+          const item = createOrderItem(title, price, img);
+          orderList.appendChild(item);
+        });
+      });
+
+      clearBtn.addEventListener('click', () => { orderList.innerHTML = ''; });
+      // Filtrar produtos conforme usuário digita na barra de pesquisa
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const q = (e.target.value || '').trim().toLowerCase();
+          document.querySelectorAll('article.card').forEach(article => {
+            const title = (article.querySelector('.title')?.textContent || '').toLowerCase();
+            const desc = (article.querySelector('.desc')?.textContent || '').toLowerCase();
+            const price = (article.querySelector('.price')?.textContent || '').toLowerCase();
+            const match = q === '' || title.includes(q) || desc.includes(q) || price.includes(q);
+            article.style.display = match ? '' : 'none';
+          });
+        });
+        // permitir tecla Enter para focar primeiro resultado
+        searchInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            const first = document.querySelector('article.card[style*="display: none"]') ? null : document.querySelector('article.card');
+            if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      }
+      // Enviar os itens para o campo Mensagem no formulário de contato
+      const sendBtn = document.getElementById('send-order');
+      sendBtn.addEventListener('click', () => {
+        const items = Array.from(orderList.children);
+        if (items.length === 0) { alert('A lista de pedir está vazia.'); return; }
+        let message = 'Olá, gostaria de fazer o seguinte pedido:\n\n';
+        let total = 0;
+        items.forEach(it => {
+          const info = it.querySelector('div');
+          const title = info.querySelector('strong')?.textContent.trim() || '';
+          const priceText = info.querySelector('span')?.textContent.trim() || '';
+          message += `- ${title} — ${priceText}\n`;
+          // tentar extrair número do preço
+          const num = priceText.replace(/[R$\s\.]/g,'').replace(',', '.').match(/-?\d+(?:\.\d+)?/);
+          if (num) total += parseFloat(num[0]);
+        });
+        if (total > 0) {
+          message += `\nTotal aproximado: R$ ${total.toFixed(2).replace('.',',')}`;
+        }
+        // Encontrar textarea do formulário de contato e preencher
+        const textarea = document.querySelector('#contato textarea');
+        if (textarea) {
+          textarea.value = message + '\n\n(Preencha nome, contato e endereço acima)';
+          // rolar para o formulário e focar
+          document.getElementById('contato').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          textarea.focus();
+        } else {
+          alert('Campo de mensagem não encontrado.');
+        }
+      });
+
+      // Painel de contato (toggle)
+      const contactBtn = document.getElementById('contactBtn');
+      const contactPanel = document.getElementById('contactPanel');
+      if (contactBtn && contactPanel) {
+        contactBtn.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          const isVisible = contactPanel.style.display === 'block';
+          contactPanel.style.display = isVisible ? 'none' : 'block';
+          contactPanel.setAttribute('aria-hidden', isVisible ? 'true' : 'false');
+        });
+        // fechar ao clicar fora
+        document.addEventListener('click', (ev) => {
+          if (!contactPanel.contains(ev.target) && ev.target !== contactBtn) {
+            contactPanel.style.display = 'none';
+            contactPanel.setAttribute('aria-hidden', 'true');
+          }
+        });
+      }
+
+      // Order bar toggle for small screens
+      const orderToggle = document.getElementById('order-toggle');
+      const orderBar = document.getElementById('order-bar');
+      const orderListEl = document.getElementById('order-list');
+      function updateOrderUI() {
+        if (window.innerWidth <= 600) {
+          orderToggle.style.display = 'inline-flex';
+          orderListEl.style.display = 'none';
+        } else {
+          orderToggle.style.display = 'none';
+          orderListEl.style.display = 'flex';
+        }
+      }
+      updateOrderUI();
+      window.addEventListener('resize', updateOrderUI);
+      if (orderToggle) {
+        orderToggle.addEventListener('click', () => {
+          if (orderListEl.style.display === 'none') {
+            orderListEl.style.display = 'flex';
+            orderBar.style.bottom = '0';
+          } else {
+            orderListEl.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+
+</body></html>
